@@ -1,0 +1,142 @@
+/* Colors for Site Theme */
+// $primary:       #66101F;
+// $secondary:     #F0F0C9;
+
+/* Bootstrap Import */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+//@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap");
+
+:root {
+  // Fonts
+  //--bs-font-sans-serif: 'Montserrat', sans-serif;
+  --bs-font-sans-serif: "Open Sans", sans-serif;
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  // Colors
+  --text-muted: #676767;
+}
+
+/* Custom Styles */
+body {
+  padding-top: 50px;
+  font-weight: 500;
+}
+
+section {
+  min-height: 100vh;
+  overflow: auto;
+
+  .container {
+    margin-top: 2em;
+  }
+}
+
+footer {
+  padding: 2em;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.5em;
+    color: #fff;
+  }
+  .bi {
+    margin: 0.5em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+}
+
+#about {
+  a {
+    color: $light;
+  }
+  span.keeptogether {
+    white-space: nowrap;
+  }
+}
+
+#interests {
+  h2 {
+    font-size: 1.85em;
+  }
+}
+
+#resume {
+  line-height: 2em;
+
+  h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.65em;
+    border-bottom: 1px solid #ccc;
+  }
+
+  a:not([href="#contact"]) {
+    color: #000;
+  }
+
+  .job__title,
+  .education__degree {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.3em;
+    font-weight: 100;
+    margin-top: 2em;
+  }
+
+  .job__location,
+  .job__timeframe,
+  .education__school,
+  .education__timeframe {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 0.5em auto;
+    color: var(--text-muted);
+    line-height: 1.2em;
+  }
+
+  .card-title {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  @media screen and (min-width: 409px) {
+    ul.two-cols {
+      columns: 2;
+    }
+  }
+  @media screen and (max-width: 409px) {
+    ul.checkmarks {
+      padding-left: 0;
+    }
+  }
+
+  ul.checkmarks {
+    li {
+      list-style-type: none;
+    }
+    li:before {
+      content: "✓";
+      font-weight: 700;
+      margin-right: 0.35em;
+    }
+  }
+}
