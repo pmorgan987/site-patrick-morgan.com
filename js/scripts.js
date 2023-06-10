@@ -3,16 +3,19 @@ $(document).ready(function () {
   var year = today.getFullYear();
   $("#copyright_year").html(year);
 
+  var portfolioInfo = ["https://www.richmondhillkarate.com", "https://www.morganfishingsupply.com", "https://daughtry.atastudents.com", "https://www.reflexologyinc.com"];
   $.ajax({
     url: "https://millenniumwebworks.com/wp-json/wp/v2/portfolio?_embed&orderby=menu_order&order=asc",
     type: "GET",
     success: (result) => {
+      console.log(result);
+      console.log(portfolioInfo);
       var imgs = "";
       for (var i = 0; i < result.length; i++) {
         var altdata = result[i]["_embedded"]["wp:featuredmedia"][0]["alt_text"];
         var imgpath = result[i]["_embedded"]["wp:featuredmedia"][0]["media_details"]["sizes"]["large"]["source_url"];
         var active = i == 0 ? " active" : "";
-        imgs += '<div class="carousel-item' + active + '"><img src="' + imgpath + '" class="img-fluid" alt="' + altdata + '" /></div>';
+        imgs += '<div class="carousel-item' + active + '"><a href="' + portfolioInfo[i] + '" target="_blank"><img src="' + imgpath + '" class="img-fluid" alt="' + altdata + '" /></a></div>';
       }
       $("#portfolio__contents > .carousel-inner").html(imgs);
       $("#portfolio__contents").carousel();
