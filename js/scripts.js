@@ -1,15 +1,15 @@
 $(document).ready(function () {
   var today = new Date();
   var year = today.getFullYear();
-  $("#copyright_year").html(year);
+  document.getElementById("copyright_year").innerHTML = year;
 
   var portfolioInfo = ["https://www.richmondhillkarate.com", "https://www.morganfishingsupply.com", "https://daughtry.atastudents.com", "https://www.reflexologyinc.com"];
   $.ajax({
     url: "https://millenniumwebworks.com/wp-json/wp/v2/portfolio?_embed&orderby=menu_order&order=asc",
     type: "GET",
     success: (result) => {
-      console.log(result);
-      console.log(portfolioInfo);
+      //console.log(result);
+      //console.log(portfolioInfo);
       var imgs = "";
       for (var i = 0; i < result.length; i++) {
         var altdata = result[i]["_embedded"]["wp:featuredmedia"][0]["alt_text"];
